@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">打开关闭USB存储设备!</string>
+    <string name="app_name">照相机内存泄露测试</string>
+    <string name="count">测试次数:</string>
+    <string name="time">时间间隔(s):</string>
+    <string name="howtimes">间隔时间(s):</string>
+    <string name="start">开始测试</string>
+    <string name="stop">停止退出</string>
+    <string name="explan">"实现的功能为：设置运行次数和时间间隔，可以反复进入退出照相机应用."</string>
+    <string name="result">测试结果:</string>
+</resources>
