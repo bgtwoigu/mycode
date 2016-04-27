@@ -21,6 +21,9 @@ public class fileUtil {
 			// Environment.getExternalStorageDirectory()。获取sd卡的路径
 			File file = new File(Environment.getExternalStorageDirectory(),
 					filename);
+			if(file.exists())
+				file.createNewFile();
+			
 			BufferedWriter bw = new BufferedWriter(new FileWriter(file, true));
 			//info = " hey, yoo,bitch";
 			bw.write(info);

@@ -12,8 +12,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
+	
 	timeUtil timeutil = new timeUtil();
 	BatteryBroadcastReciver reciver;
 	TextView displaybattry, time;
@@ -27,8 +29,8 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		init();
-		//time1 = time.getText().toString();
-		//time2 = Integer.parseInt(time1);
+		// time1 = time.getText().toString();
+		// time2 = Integer.parseInt(time1);
 		currenttime = timeutil.currentTime();
 		Log.e(TAG, "onCreate");
 		begin.setOnClickListener(new OnClickListener() {
@@ -37,29 +39,34 @@ public class MainActivity extends Activity {
 
 				/*
 				 * Bundle bundle=new Bundle(); bundle.putInt("time", time2);
-				 
-				Intent intent1 = new Intent();
-				intent1.putExtra("time", time2);
-				sendBroadcast(intent1);*/
-				Intent intent = new Intent(MainActivity.this,
-						BatteryMonitorService.class);
+				 * 
+				 * Intent intent1 = new Intent(); intent1.putExtra("time",
+				 * time2); sendBroadcast(intent1);
+				 */
+				Intent intent = new Intent(MainActivity.this, BatteryMonitorService.class);
 				// Intent intent=new Intent(MainActivity.class,
 				// BatteryMonitorService.class);
+
 				startService(intent);
+
+				Toast.makeText(getApplicationContext(), "¼à¿Ø¿ªÊ¼", 0).show();
 
 			}
 		});
 		stop.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				stopService(new Intent(MainActivity.this,
-						BatteryMonitorService.class));
-				
+				stopService(new Intent(MainActivity.this, BatteryMonitorService.class));
+				Toast.makeText(getApplicationContext(), "½áÊø¼à¿Ø", 0).show();
+
 			}
 		});
-		displaybattry = (TextView) findViewById(R.id.displaybattry);
-		displaybattry.setText(currenttime);
+		
+		
+			displaybattry = (TextView) findViewById(R.id.displaybattry);
+			displaybattry.setText(currenttime);
+			
 	}
 
 	public void init() {
@@ -97,6 +104,9 @@ public class MainActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onDestroy();
 		// unregisterReceiver(reciver);
+		Intent intent2 = new Intent(MainActivity.this, BatteryMonitorService.class);
+
+		startService(intent2);
 		Log.e(TAG, "onDestroy");
 	}
 
