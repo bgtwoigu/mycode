@@ -11,13 +11,14 @@ import android.util.Log;
 import android.widget.Toast;
 
 public class BatteryBroadcastReciver extends BroadcastReceiver {
-	fileUtil fileutil = new fileUtil();
-	timeUtil timeutil = new timeUtil();
+	fileUtil fileutil;
+	timeUtil timeutil;
 	int time3;
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-
+		fileutil = new fileUtil();
+		timeutil = new timeUtil();
 		// time3=intent.getIntExtra("time", time2);
 		if (Intent.ACTION_BATTERY_OKAY.equals(intent.getAction())) {
 			Toast.makeText(context, "电量已恢复，可以使用!", Toast.LENGTH_LONG).show();
@@ -41,22 +42,23 @@ public class BatteryBroadcastReciver extends BroadcastReceiver {
 			StringBuffer sb = new StringBuffer();
 			sb.append("当前电量为：" + current * 100 / total + "%" + "  ");
 
-			 //Toast.makeText(context, timeutil.currentTime() + sb.toString(),
-			 //0).show();
+			// Toast.makeText(context, timeutil.currentTime() + sb.toString(),
+			// 0).show();
 			fileutil.saveToSDCard("zzzzzzzz.log", timeutil.currentTime() + sb.toString());
-			
+
 			Log.e("zbinBatteryBroadcastReciver", "广播+监控电量变化，写入数据中！！！");
 
 		}
 
 	}
 
-	/*public String getbattery(int c, int t) {
-		StringBuffer sb = new StringBuffer();
-		sb.append("当前电量为：" + c * 100 / t + "%" + "  ");
-
-		return sb.toString();
-
-	}*/
+	/*
+	 * public String getbattery(int c, int t) { StringBuffer sb = new
+	 * StringBuffer(); sb.append("当前电量为：" + c * 100 / t + "%" + "  ");
+	 * 
+	 * return sb.toString();
+	 * 
+	 * }
+	 */
 
 }
