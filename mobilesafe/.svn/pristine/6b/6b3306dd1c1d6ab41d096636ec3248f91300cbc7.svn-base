@@ -1,0 +1,38 @@
+package com.itheima.mobilesafe;
+
+import com.itheima.mobilesafe.utils.SystemInfoUtils;
+
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.text.format.Formatter;
+import android.widget.TextView;
+
+public class TaskManagerActivity extends Activity {
+	private TextView tv_process_count;
+	private TextView tv_mem_info;
+	//活动管理器  activitymanager
+	private ActivityManager am;
+	
+	//正在运行进程数量
+	private int runningProcessCount;
+	//可用用ram内存
+	private long availRam;
+	//总内存
+	private long totalRam;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_task_manager);
+		am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+		tv_mem_info = (TextView) findViewById(R.id.tv_mem_info);
+		tv_process_count = (TextView) findViewById(R.id.tv_process_count);
+		runningProcessCount = SystemInfoUtils.getRunningProcessCount(this);
+		availRam = SystemInfoUtils.getAvailRam(this);
+		totalRam = SystemInfoUtils.getTotalRam(this);
+		tv_process_count.setText("运行中进程:"+runningProcessCount+"个");
+		tv_mem_info.setText("剩余/总内存："+Formatter.formatFileSize(this, availRam)+"/"+Formatter.formatFileSize(this, totalRam));
+	}
+}

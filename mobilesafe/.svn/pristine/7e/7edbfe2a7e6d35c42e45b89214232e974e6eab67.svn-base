@@ -1,0 +1,39 @@
+package com.itheima.mobilesafe;
+
+import android.app.Activity;
+import android.nfc.FormatException;
+import android.os.Bundle;
+import android.os.Environment;
+import android.os.StatFs;
+import android.text.format.Formatter;
+import android.widget.TextView;
+
+public class AppManagerActivity extends Activity {
+	private TextView tv_avail_rom;
+	private TextView tv_avail_sd;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_app_manager);
+		tv_avail_rom = (TextView) findViewById(R.id.tv_avail_rom);
+		tv_avail_sd = (TextView) findViewById(R.id.tv_avail_sd);
+		tv_avail_sd.setText("SD卡可用："+getTotalSpace(Environment.getExternalStorageDirectory().getAbsolutePath()));
+		tv_avail_rom.setText("内存可用："+getTotalSpace(Environment.getDataDirectory().getAbsolutePath()));
+		
+		
+	}
+	
+	/**
+	 * 获取某个路径可用的空间
+	 * @param path
+	 * @return
+	 */
+	public String getTotalSpace(String path){
+		StatFs stat = new StatFs(path);
+		long count = stat.getAvailableBlocks();
+		long size = stat.getBlockSize();
+		return Formatter.formatFileSize(this, count*size);
+	}
+	
+}
