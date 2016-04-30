@@ -3,6 +3,8 @@ package com.zbin.blacknumber;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.zbin.blacknumberInfo.BlackNumberInfo;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
