@@ -12,7 +12,6 @@ import android.graphics.drawable.Drawable;
  *
  */
 public class AppInfo {
-	private String packagename;
 
 	public String getPackagename() {
 		return packagename;
@@ -23,6 +22,7 @@ public class AppInfo {
 	}
 
 	public Intent getIntent() {
+
 		return intent;
 	}
 
@@ -30,6 +30,7 @@ public class AppInfo {
 		this.intent = intent;
 	}
 
+	private String packagename;
 	private Intent intent;
 	private String appName;
 	private String appSize;

@@ -40,7 +40,7 @@ public class ListViewAdapter extends BaseAdapter {
 
 	@Override
 	public int getCount() {
-		if (list != null) {
+		if (list.size()!=0) {
 			return list.size();
 		} else {
 			return 0;
