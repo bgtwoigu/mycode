@@ -192,7 +192,7 @@ public class Category_music extends Activity implements OnClickListener {
 			});
 		}
 	};
-	boolean mIsPause = false;// ÔÝÍ£×´Ì¬
+	boolean mIsPause = true;// ÔÝÍ£×´Ì¬
 
 	@Override
 	public void onClick(View v) {
@@ -222,6 +222,7 @@ public class Category_music extends Activity implements OnClickListener {
 			totaltime.setText(dcurrenttimeMinute + ":" + currenttimeSecond);
 			stop.setBackgroundResource(R.drawable.img_lockscreen_pause_normal);
 			currentpos++;
+			mIsPause = false;
 			break;
 		case R.id.button_previous_music:
 			musicservice.doppre();
@@ -233,6 +234,7 @@ public class Category_music extends Activity implements OnClickListener {
 			totaltime.setText(dcurrenttimeMinute1 + ":" + currenttimeSecond1);
 			stop.setBackgroundResource(R.drawable.img_lockscreen_pause_normal);
 			currentpos--;
+			mIsPause = false;
 			break;
 		default:
 			break;
