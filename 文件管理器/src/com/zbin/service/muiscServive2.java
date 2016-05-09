@@ -11,17 +11,19 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import myinterface.musicinterface;
 
-public class muiscServive2 extends Service{
+public class muiscServive2 extends Service {
 	private MediaPlayer mp;
 	private String path;
 	private boolean f = false;
+
 	@Override
 	public IBinder onBind(Intent intent) {
 		path = intent.getStringExtra("path");
 		System.out.println(path);
-	//	return new MyBinder();
+		// return new MyBinder();
 		return null;
 	}
+
 	@Override
 	public void onCreate() {
 		// TODO Auto-generated method stub
@@ -88,7 +90,7 @@ public class muiscServive2 extends Service{
 				// 根新进度条
 				if (mp.isPlaying()) {
 					seekbar.setProgress(mp.getCurrentPosition());
-					
+
 				}
 				handle.postDelayed(runnable, 500);
 			}
@@ -96,57 +98,58 @@ public class muiscServive2 extends Service{
 
 		public void dopause() {
 			// 调用的本地MyService的暂停
-			f=false;
+			f = false;
 			pause();
-		}  
+		}
 
 		public void doresume() {
 			resume();
 		}
-		public void dorevmo(){
+
+		public void dorevmo() {
 			handle.removeCallbacks(runnable);
 		}
-     
-		public void init(SeekBar seekbar,final onMusicOver over) {
+
+		public void init(SeekBar seekbar, final onMusicOver over) {
 			System.out.println("*********init******");
 			this.seekbar = seekbar;
 			// 重置
 			mp.reset();
-			
+
 			// 设置播放资源
 			try {
 				mp.setDataSource(path);
 				mp.prepare();
 				seekbar.setMax(mp.getDuration());
-				//设置拖动进度条改变的时候的监听方法
+				// 设置拖动进度条改变的时候的监听方法
 				seekbar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-					
+
 					@Override
 					public void onStopTrackingTouch(SeekBar seekBar) {
 						// TODO Auto-generated method stub
-						
+
 					}
-					
+
 					@Override
 					public void onStartTrackingTouch(SeekBar seekBar) {
 						// TODO Auto-generated method stub
-						
+
 					}
-					
+
 					@Override
-					public void onProgressChanged(SeekBar seekBar, int progress,
-							boolean fromUser) {
-						// fromUser  是否是用户操作
-						
-						if(fromUser){
+					public void onProgressChanged(SeekBar seekBar,
+							int progress, boolean fromUser) {
+						// fromUser 是否是用户操作
+
+						if (fromUser) {
 							mp.seekTo(progress);
-							
+
 						}
 					}
 				});
 				// 设置进度
 				mp.start();
-			f=true;
+				f = true;
 				handle.post(runnable);
 				mp.setOnCompletionListener(new OnCompletionListener() {
 					@Override
@@ -182,9 +185,8 @@ public class muiscServive2 extends Service{
 		public void doRset() {
 			mp.release();
 		}
-	
 
-}
+	}
 
 }
 */

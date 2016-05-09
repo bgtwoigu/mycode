@@ -6,9 +6,6 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.zbin.FileManager.Category_music.OnProgresslistener;
-import com.zbin.bean.Category_music_info;
-
 import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -16,9 +13,12 @@ import android.media.MediaPlayer.OnCompletionListener;
 import android.net.Uri;
 import android.os.Binder;
 import android.os.IBinder;
-import android.os.Looper;
 import android.util.Log;
-import myinterface.musicinterface;
+import android.widget.SeekBar;
+
+import com.zbin.FileManager.Category_music.OnProgresslistener;
+import com.zbin.bean.Category_music_info;
+import com.zbin.myinterface.MusicInterface;
 
 public class MusicService extends Service {
 
@@ -58,6 +58,7 @@ public class MusicService extends Service {
 		try {
 			mp.reset();
 			mp.setDataSource(url.toString());
+			// mp.prepareAsync();
 			mp.prepare();
 			listener.processStart(mp.getDuration());
 			mp.start();
@@ -117,6 +118,7 @@ public class MusicService extends Service {
 				// mp.stop();
 				// mp.release();
 				// next();
+
 				Log.d(TAG, "[onCompletion] mediaplayer play copletion");
 			}
 		});
@@ -138,10 +140,30 @@ public class MusicService extends Service {
 		return super.onUnbind(intent);
 	}
 
-	class MyBinder extends Binder implements musicinterface {
+	class MyBinder extends Binder implements MusicInterface {
+		private SeekBar seekbar;
 
 		@Override
-		public List<Category_music_info> getList(List<Category_music_info> playList) {
+		public MediaPlayer getmediaplayer() {
+			// TODO Auto-generated method stub
+			return MusicService.this.mp;
+		}
+
+		@Override
+		public boolean ismedianull() {
+			// TODO Auto-generated method stub
+			return mp.equals(null);
+		}
+
+		@Override
+		public boolean isplaying() {
+
+			return mp.isPlaying();
+		}
+
+		@Override
+		public List<Category_music_info> getList(
+				List<Category_music_info> playList) {
 
 			return playList;
 		}
@@ -200,6 +222,12 @@ public class MusicService extends Service {
 
 		@Override
 		public void setOnProgressListener(OnProgresslistener listener) {
+			MusicService.this.listener = listener;
+
+		}
+
+		@Override
+		public void getOnProgressListener(OnProgresslistener listener) {
 			MusicService.this.listener = listener;
 
 		}
