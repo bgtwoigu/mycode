@@ -1,0 +1,46 @@
+Updated file E:\UiNewTest_H2_M_new\UiNewTest_H2_M_new\UiTest\build.xml
+Buildfile: E:\UiNewTest_H2_M_new\UiNewTest_H2_M_new\UiTest\build.xml
+
+-check-env:
+ [checkenv] Android SDK Tools Revision 24.4.1
+ [checkenv] Installed at D:\Java\adt-bundle-windows\sdk
+
+-build-setup:
+[getbuildtools] Using latest Build Tools: 23.0.3
+     [echo] Resolving Build Target for UiTest...
+[getuitarget] Project Target:   Android 5.0.1
+[getuitarget] API level:        21
+     [echo] ----------
+     [echo] Creating output directories if needed...
+
+-pre-compile:
+
+compile:
+    [javac] Compiling 1 source file to E:\UiNewTest_H2_M_new\UiNewTest_H2_M_new\UiTest\bin\classes
+    [javac] ����: [options] Դֵ1.5�ѹ�ʱ, ����δ�����з��а���ɾ��
+    [javac] ����: [options] Ŀ��ֵ1.5�ѹ�ʱ, ����δ�����з��а���ɾ��
+    [javac] ����: [options] Ҫ�����й��ѹ�ʱѡ��ľ���, ��ʹ�� -Xlint:-options��
+    [javac] 3 ������
+
+-post-compile:
+
+-dex:
+      [dex] input: E:\UiNewTest_H2_M_new\UiNewTest_H2_M_new\UiTest\bin\classes
+      [dex] Found Deleted Target File
+      [dex] Converting compiled files and external libraries into E:\UiNewTest_H2_M_new\UiNewTest_H2_M_new\UiTest\bin\classes.dex...
+
+-post-dex:
+
+-jar:
+      [jar] Building jar: E:\UiNewTest_H2_M_new\UiNewTest_H2_M_new\UiTest\bin\UiTest.jar
+
+-post-jar:
+
+build:
+
+BUILD SUCCESSFUL
+Total time: 2 seconds
+adb server is out of date.  killing...
+* daemon started successfully *
+* daemon not running. starting it now on port 5037 *
+* daemon started successfully *
