@@ -1,0 +1,2 @@
+2016-07-06 15:24:53,385 - RemoteClient - INFO - load libraries
+2016-07-06 15:24:53,470 - RemoteClient - INFO - run 'AdbOperation.getFistAdbDevice(())'

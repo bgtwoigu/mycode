@@ -1,0 +1,9 @@
+2016-07-06 16:34:11,819 - RemoteClient - INFO - load libraries
+2016-07-06 16:34:11,898 - RemoteClient - INFO - run 'AdbOperation.getFistAdbDevice(())'
+2016-07-06 16:39:52,334 - RemoteClient - INFO - run 'AdbOperation.stopAdbServer(())'
+2016-07-06 16:39:52,335 - RemoteClient - INFO - run 'AdbOperation.isDeviceExists(('27a9c7b4',))'
+2016-07-06 16:46:34,275 - RemoteClient - INFO - run 'AppStartMonitor.main(('27a9c7b4', '/home/one/abts/testqueuepool/1467792496102/AppStartMonitor', {'AppList': {'Phone': 'com.android.dialer', 'Messenger': 'com.google.android.apps.messaging'}}))'
+2016-07-06 16:46:35,490 - RemoteClient - WARNING - Unlock The Device Failed
+2016-07-06 16:46:38,489 - RemoteClient - INFO - run 'DeviceUtil.initTestDevice(('27a9c7b4',))'
+2016-07-06 16:47:28,387 - RemoteClient - INFO - run 'AdbOperation.stopAdbServer(())'
+2016-07-06 16:47:28,434 - RemoteClient - INFO - run 'AppStartMonitor.main(('27a9c7b4', '/home/one/abts/testqueuepool/1467792496103/AppStartMonitor', {'AppList': {'Phone': 'com.android.dialer', 'Messenger': 'com.google.android.apps.messaging'}}))'

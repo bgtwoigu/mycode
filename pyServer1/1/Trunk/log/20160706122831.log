@@ -1,0 +1,4 @@
+2016-07-06 12:28:31,786 - RemoteClient - INFO - load libraries
+2016-07-06 12:28:31,811 - RemoteClient - WARNING - No module named MySQLdb
+2016-07-06 12:28:31,812 - RemoteClient - WARNING - No module named MySQLdb
+2016-07-06 12:28:31,855 - RemoteClient - INFO - run 'AdbOperation.getFistAdbDevice(())'

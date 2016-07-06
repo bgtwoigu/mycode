@@ -1,0 +1,7 @@
+2016-07-06 19:13:04,345 - RemoteClient - INFO - load libraries
+2016-07-06 19:13:04,411 - RemoteClient - INFO - run 'AdbOperation.getFistAdbDevice(())'
+2016-07-06 19:13:15,427 - RemoteClient - INFO - run 'AdbOperation.isDeviceExists(('27a9c7b4',))'
+2016-07-06 19:13:15,463 - RemoteClient - INFO - run 'DeviceUtil.initTestDevice(('27a9c7b4',))'
+2016-07-06 19:14:03,516 - RemoteClient - INFO - run 'AdbOperation.stopAdbServer(())'
+2016-07-06 19:14:03,523 - RemoteClient - INFO - run 'AppStartMonitor.main(('27a9c7b4', '/home/one/abts/testqueuepool/1467792496119/AppStartMonitor', {'AppList': {'Phone': 'com.android.dialer', 'Messenger': 'com.google.android.apps.messaging'}}))'
+2016-07-06 19:14:03,525 - RemoteClient - WARNING - local variable 'len' referenced before assignment

@@ -1,0 +1,6 @@
+2016-07-06 19:00:49,562 - RemoteClient - INFO - load libraries
+2016-07-06 19:00:49,625 - RemoteClient - INFO - run 'AdbOperation.getFistAdbDevice(())'
+2016-07-06 19:01:08,460 - RemoteClient - INFO - run 'AdbOperation.isDeviceExists(('27a9c7b4',))'
+2016-07-06 19:01:12,694 - RemoteClient - INFO - run 'DeviceUtil.initTestDevice(('27a9c7b4',))'
+2016-07-06 19:02:01,480 - RemoteClient - INFO - run 'AdbOperation.stopAdbServer(())'
+2016-07-06 19:02:01,486 - RemoteClient - INFO - run 'AppStartMonitor.main(('27a9c7b4', '/home/one/abts/testqueuepool/1467792496118/AppStartMonitor', {'AppList': {'Phone': 'com.android.dialer', 'Messenger': 'com.google.android.apps.messaging'}}))'

@@ -1,0 +1,7 @@
+2016-07-06 18:50:21,127 - RemoteClient - INFO - load libraries
+2016-07-06 18:50:21,193 - RemoteClient - INFO - run 'AdbOperation.getFistAdbDevice(())'
+2016-07-06 18:52:18,678 - RemoteClient - INFO - run 'AdbOperation.isDeviceExists(('27a9c7b4',))'
+2016-07-06 18:52:22,908 - RemoteClient - INFO - run 'DeviceUtil.initTestDevice(('27a9c7b4',))'
+2016-07-06 18:53:11,289 - RemoteClient - INFO - run 'AdbOperation.stopAdbServer(())'
+2016-07-06 18:53:11,296 - RemoteClient - INFO - run 'AppStartMonitor.main(('27a9c7b4', '/home/one/abts/testqueuepool/1467792496116/AppStartMonitor', {'AppList': {'Phone': 'com.android.dialer', 'Messenger': 'com.google.android.apps.messaging'}}))'
+2016-07-06 18:53:34,688 - RemoteClient - WARNING - [Errno 2] No such file or directory: '\\172.21.10.126/abtsTaskTemp/testresult.json'

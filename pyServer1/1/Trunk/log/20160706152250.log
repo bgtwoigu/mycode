@@ -1,0 +1,4 @@
+2016-07-06 15:22:50,711 - RemoteClient - INFO - load libraries
+2016-07-06 15:22:50,772 - RemoteClient - WARNING - No module named serial
+2016-07-06 15:22:50,773 - RemoteClient - WARNING - No module named serial
+2016-07-06 15:22:51,207 - RemoteClient - INFO - run 'AdbOperation.getFistAdbDevice(())'
